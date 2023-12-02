@@ -28,7 +28,7 @@ namespace PayMeToDriveMyCar
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CalculateMileages()
         {
             startingMileage = (int)numericUpDown1.Value;
             endingMileage = (int)numericUpDown2.Value;
@@ -39,10 +39,20 @@ namespace PayMeToDriveMyCar
                 return;
             }
 
-            milesTraveled = endingMileage -= startingMileage;
-            amountOwed = milesTraveled *= reimburseRate;
+            milesTraveled = endingMileage - startingMileage;
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CalculateMileages();
+            amountOwed = milesTraveled * reimburseRate;
             label4.Text = "$" + amountOwed;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CalculateMileages();
+            MessageBox.Show(milesTraveled + " miles", "Miles Traveled");
         }
     }
 }
