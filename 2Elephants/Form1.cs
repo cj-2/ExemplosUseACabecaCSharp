@@ -32,5 +32,15 @@ namespace _2Elephants
 
             MessageBox.Show("Objects swapped!");
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Lyod.TellMe("Hi!", Lucinda);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Lyod.SpeakTo(Lucinda, "Hey... Ruuuuuuum!!!");
+        }
     }
 }
