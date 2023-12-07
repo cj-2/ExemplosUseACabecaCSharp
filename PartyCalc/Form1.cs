@@ -16,20 +16,16 @@ namespace PartyCalc
         public Form1()
         {
             InitializeComponent();
-            dinnerParty = new DinnerParty();
+            dinnerParty = new DinnerParty((int)numericUpDown1.Value, healthyOption.Checked, fancyDecoration.Checked);
             DisplayDinnerPartyCoast();
         }
 
         void DisplayDinnerPartyCoast()
         {
-            dinnerParty.SetPartyOptions((int)numericUpDown1.Value, fancyDecoration.Checked, healthyOption.Checked);
+            dinnerParty.SetOptions((int)numericUpDown1.Value, healthyOption.Checked, fancyDecoration.Checked);
+
             decimal Cost = dinnerParty.CalculateCost();
             costLabel.Text = Cost.ToString("c");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            DisplayDinnerPartyCoast();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -44,6 +40,7 @@ namespace PartyCalc
 
         private void healthyOption_CheckedChanged(object sender, EventArgs e)
         {
+            dinnerParty.SetHealthyOption(healthyOption.Checked);
             DisplayDinnerPartyCoast();
         }
     }
