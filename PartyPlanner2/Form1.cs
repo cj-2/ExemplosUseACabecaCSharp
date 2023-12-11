@@ -19,18 +19,18 @@ namespace PartyPlanner2
         {
             InitializeComponent();
 
-            dinnerParty = new DinnerParty((int)numberParty.Value, healthyOption.Checked, fancyDecoration.Checked);
+            dinnerParty = new DinnerParty((int)numberParty.Value, healthyOption.Checked);
             DisplayDinnerPartyCoast();
 
-            birthdayParty = new BirthdayParty((int)numberBirthday.Value, fancyBirthday.Checked, cakeWriting.Text);
+            birthdayParty = new BirthdayParty((int)numberBirthday.Value, cakeWriting.Text);
             DisplayBirthdayPartyCoast();
         }
 
         void DisplayDinnerPartyCoast()
         {
-            dinnerParty.SetOptions((int)numberParty.Value, healthyOption.Checked, fancyDecoration.Checked);
+            dinnerParty.NumberOfPeople = (int)numberParty.Value;
 
-            decimal Cost = dinnerParty.CalculateCost();
+            decimal Cost = dinnerParty.CalculateCost(fancyDecoration.Checked, healthyOption.Checked);
             dinnerCost.Text = Cost.ToString("c");
         }
 
@@ -51,9 +51,12 @@ namespace PartyPlanner2
 
         void DisplayBirthdayPartyCoast()
         {
-            birthdayParty.SetOptions((int)numberBirthday.Value, fancyBirthday.Checked, cakeWriting.Text);
+            birthdayParty.NumberOfPeople = (int)numberBirthday.Value;
+            birthdayParty.CakeWriting = cakeWriting.Text;
+
+            decimal Cost = birthdayParty.CalculateCost(fancyBirthday.Checked);
+
             cakeWriting.Text = birthdayParty.CakeWriting;
-            decimal Cost = birthdayParty.CalculateCost();
             birthdayCost.Text = Cost.ToString("c");
         }
 
