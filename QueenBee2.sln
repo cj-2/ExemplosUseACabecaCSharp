@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueenBee2", "QueenBee2\QueenBee2.csproj", "{FBCEDA81-B95C-4421-BDB5-07F65C631C56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBCEDA81-B95C-4421-BDB5-07F65C631C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBCEDA81-B95C-4421-BDB5-07F65C631C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBCEDA81-B95C-4421-BDB5-07F65C631C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBCEDA81-B95C-4421-BDB5-07F65C631C56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {008F12D4-62C9-4BDC-A0DA-17E7DC11910E}
+	EndGlobalSection
+EndGlobal
