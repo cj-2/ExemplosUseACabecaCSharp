@@ -2,14 +2,14 @@
 
 namespace QueenBee2
 {
-    internal class Worker : Bee
+    internal class Worker : Bee, IWorker
     {
         public Worker(string[] jobsICanDo, int miligrams) : base(miligrams)
         {
             this.jobsICanDo = jobsICanDo;
         }
 
-        public string CurrentJob { get; private set; }
+        public string CurrentJob { get; set; }
         public override int ShiftsLeft { get { return shiftsToWork - shiftsWorked; } }
 
         private string[] jobsICanDo;
