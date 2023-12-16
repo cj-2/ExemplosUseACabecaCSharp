@@ -57,6 +57,8 @@
     <Compile Include="QueenControl.Designer.cs">
       <DependentUpon>QueenControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoboBee.cs" />
+    <Compile Include="Robot.cs" />
     <Compile Include="Worker.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
