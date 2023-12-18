@@ -9,7 +9,8 @@ namespace TheTallGuyTest
             this.funnyThingIHave = funnyThingIHave;
         }
 
-        private string funnyThingIHave;
+        protected string funnyThingIHave;
+
         public string FunnyThingIHave { get { return "Honk honk! I have a " + funnyThingIHave; } }
 
         public void Hoink()

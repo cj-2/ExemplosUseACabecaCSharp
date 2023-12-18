@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace TheTallGuyTest
 {
@@ -16,11 +11,11 @@ namespace TheTallGuyTest
 
         private int numberOfScaryThings;
 
-        public string ScaryThingsIHave { get { return "I have " + numberOfScaryThings + " spiders"; } }
+        public string ScaryThingsIHave { get { return "I have " + numberOfScaryThings + " spiders."; } }
 
         public void ScareLittleChildren()
         {
-            MessageBox.Show("Boo! Gotcha", "The clown says...");
+            MessageBox.Show("Boo! Gotcha! Look my " + funnyThingIHave, "The clown says...");
         }
     }
 }
