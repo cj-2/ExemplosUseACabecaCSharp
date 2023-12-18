@@ -12,9 +12,14 @@ namespace TheTallGuyTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TallGuy tallGuy = new TallGuy() { Height = 74, Name = "Carlinhos" };
+            // TallGuy tallGuy = new TallGuy() { Height = 74, Name = "Carlinhos" };
             // tallGuy.TalkAboutYourself();
-            tallGuy.Hoink();
+            // tallGuy.Hoink();
+
+            ScaryScary fingersTheClown = new ScaryScary("big shoes", 14);
+            FunnyFunny someFunnyClown = fingersTheClown;
+            IScaryClown someOtherScaryClown = someFunnyClown as ScaryScary;
+            someOtherScaryClown.ScareLittleChildren();
         }
     }
 }
