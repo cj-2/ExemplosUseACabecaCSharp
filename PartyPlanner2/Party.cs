@@ -1,6 +1,6 @@
 ﻿namespace PartyPlanner2
 {
-    internal class Party
+    internal abstract class Party
     {
         public Party(int numberOfPeople)
         {
