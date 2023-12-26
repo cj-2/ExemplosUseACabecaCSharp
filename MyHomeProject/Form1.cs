@@ -5,15 +5,15 @@ namespace MyHomeProject
 {
     public partial class Form1 : Form
     {
-        RoomWithDoor livingRoom = new RoomWithDoor("Living Room", "an antique carpet", "an oak door with a brass knob");
-        RoomWithDoor kitchen = new RoomWithDoor("Kitchen", "acessórios em aço inox", "porta com tela");
+        RoomWithDoor livingRoom;
+        RoomWithDoor kitchen;
 
-        Room dinningRoom = new Room("Dinning Room", "candelabro de cristal");
+        Room dinningRoom;
 
-        OutsideWithDoor frontYard = new OutsideWithDoor("Front Yard", false, "");
-        OutsideWithDoor backYard = new OutsideWithDoor("Back Yard", true, "");
+        OutsideWithDoor frontYard;
+        OutsideWithDoor backYard;
 
-        Outside garden = new Outside("Garden", false);
+        Outside garden;
 
         Location currentLocation;
 
