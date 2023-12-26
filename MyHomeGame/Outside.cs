@@ -14,7 +14,7 @@
         {
             get
             {
-                return base.Description + (Hot ? " It's very hot here!\r\n" : "");
+                return base.Description + (Hot ? "It's very hot here!\r\n" : "");
             }
         }
     }

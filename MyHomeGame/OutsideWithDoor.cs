@@ -12,6 +12,6 @@
 
         public Location DoorLocation { get; set; }
 
-        public override string Description { get { return base.Description + " You see " + doorDescription + ".\r\n"; } }
+        public override string Description { get { return base.Description + "You see " + doorDescription + ".\r\n"; } }
     }
 }

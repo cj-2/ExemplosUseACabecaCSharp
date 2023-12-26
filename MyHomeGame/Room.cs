@@ -17,7 +17,7 @@
         {
             get
             {
-                return base.Description + " You see " + Decoration + ".\r\n";
+                return base.Description + "You see " + Decoration + ".\r\n";
             }
         }
     }

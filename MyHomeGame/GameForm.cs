@@ -29,23 +29,25 @@ namespace MyHomeGame
         public GameForm()
         {
             InitializeComponent();
-            CheckVisibleButtons();
+            RedrawForm();
         }
 
         void StartGame()
         {
             CreateObjects();
+
+            opponent = new Opponent(garden);
             gameStarted = true;
-            CheckVisibleButtons();
+            moves = 0;
         }
 
-        void CheckVisibleButtons()
+        void RedrawForm()
         {
             exits.Visible = gameStarted;
             goHere.Visible = gameStarted;
             hide.Visible = !gameStarted;
-
             goThroughTheDoor.Visible = currentLocation is IHasExteriorDoor && gameStarted ? true : false;
+
 
             if (currentLocation is IHidingPlace && gameStarted)
             {
@@ -53,6 +55,21 @@ namespace MyHomeGame
                 check.Text = "Procurar em " + (currentLocation as IHidingPlace).HidingPlaceName;
             }
             else check.Visible = false;
+
+            if (!gameStarted) return;
+
+            if (exits.Visible && currentLocation != null)
+            {
+                exits.Items.Clear();
+
+                for (int i = 0; i < currentLocation.Exits.Length; i++)
+                    exits.Items.Add(currentLocation.Exits[i].Name);
+
+                exits.SelectedIndex = 0;
+
+            }
+
+            if (currentLocation != null) description.Text = currentLocation.Description + "\r\nMovimentos: " + moves;
         }
 
         void CreateObjects()
@@ -96,24 +113,13 @@ namespace MyHomeGame
             banheiro.Exits = new Location[] { hallSuperior };
 
             calcada.Exits = new Location[] { frontYard, backYard };
-
-            opponent = new Opponent(garden);
-            moves = 0;
         }
 
-        void MoveToANewLocation(Location location)
+        void MoveToANewLocation(Location location, bool countMovment = true)
         {
-            moves++;
+            if(countMovment) moves++;
             currentLocation = location;
-            exits.Items.Clear();
-
-            for (int i = 0; i < currentLocation.Exits.Length; i++)
-                exits.Items.Add(currentLocation.Exits[i].Name);
-
-            exits.SelectedIndex = 0;
-            description.Text = currentLocation.Description;
-
-            CheckVisibleButtons();
+            RedrawForm();
         }
 
         private void hide_Click(object sender, EventArgs e)
@@ -121,37 +127,35 @@ namespace MyHomeGame
             hide.Visible = false;
             description.Text = "";
 
-            for (int i = 0; i < 10; i++)
-            {
-                description.Text = (i + 1) + "";
-                Application.DoEvents();
-                System.Threading.Thread.Sleep(500);
-            }
-
             StartGame();
 
             for (int i = 0; i < 10; i++)
             {
+                description.Text = (i + 1) + "";
+                Application.DoEvents();
                 opponent.Move();
+                System.Threading.Thread.Sleep(500);
             }
-
-            MoveToANewLocation(garden);
 
             description.Text = "Pronto ou não, la vou eu!";
             Application.DoEvents();
 
             System.Threading.Thread.Sleep(1000);
+            MoveToANewLocation(garden, false);
         }
 
         private void check_Click(object sender, EventArgs e)
         {
+            moves++;
+
             if (opponent.Check(currentLocation))
             {
                 description.Text = "Você me achou em " + moves + " movimentos!";
 
                 gameStarted = false;
-                CheckVisibleButtons();
             }
+
+            RedrawForm();
         }
 
         private void goHere_Click(object sender, EventArgs e)
