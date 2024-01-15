@@ -7,7 +7,7 @@
 
         public override string ToString()
         {
-            return "Type: " + Kind.ToString() + ", Size: " + Size;
+            return "Um pato do tipo " + Kind + " com " + Size + " inch";
         }
 
         public int CompareTo(Duck otherDuck)

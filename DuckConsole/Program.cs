@@ -52,9 +52,9 @@
         public static void PrintDucks(List<Duck> ducks)
         {
             foreach (Duck duck in ducks)
-                Console.WriteLine(duck.ToString());
+                Console.WriteLine(duck);
 
-            Console.WriteLine("End of Ducks!");
+            Console.WriteLine("End of Ducks! \n");
         }
     }
 }
