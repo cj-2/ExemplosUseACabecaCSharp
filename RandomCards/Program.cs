@@ -20,7 +20,7 @@
             Console.WriteLine("Depois:");
 
             foreach (Card card in cards)
-                Console.WriteLine(card.Name);
+                Console.WriteLine(card);
 
             Console.ReadKey();
         }

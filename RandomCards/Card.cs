@@ -11,6 +11,11 @@
         public Values Value { get; set; }
         public Suits Suit { get; set; }
 
-        public string Name { get { return Value.ToString() + " of " + Suit.ToString(); } }
+        public string Name { get { return Value + " of " + Suit; } }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
