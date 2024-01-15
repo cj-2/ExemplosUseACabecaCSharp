@@ -46,6 +46,8 @@
             Ducks.Sort(comparer);
             PrintDucks(Ducks);
 
+            PrintDucksWithEnumerator(Ducks);
+
             Console.ReadKey();
         }
 
@@ -55,6 +57,26 @@
                 Console.WriteLine(duck);
 
             Console.WriteLine("End of Ducks! \n");
+        }
+
+        public static void PrintDucksWithEnumerator(List<Duck> ducks)
+        {
+            Console.WriteLine("Loop utilizando Enumerator:");
+            // Fazendo um loop utilizando o enumerator.
+            IEnumerator<Duck> enumerator = ducks.GetEnumerator();
+
+            // O MoveNext modifica a referência do "enumerator.Current"
+            // para o próximo item da lista, caso tenha sucesso retorna true,
+            // caso não haja um próximo item, retorna false.
+            while (enumerator.MoveNext())
+            {
+                Duck duck = enumerator.Current;
+                Console.WriteLine(duck);
+            }
+
+            // Essa parte aqui ainda não foi explicada.
+            IDisposable disposable = enumerator as IDisposable;
+            if (disposable != null) disposable.Dispose();
         }
     }
 }
