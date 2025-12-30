@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testes", "Testes\Testes.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DespejoHexa", "DespejoHexa\DespejoHexa.csproj", "{2D102761-9006-4E1D-8E13-49C818445E23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexaDumper", "HexaDumper\HexaDumper.csproj", "{9B3F38E9-BE49-4D47-9A71-56FE58F9C1EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{2D102761-9006-4E1D-8E13-49C818445E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D102761-9006-4E1D-8E13-49C818445E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D102761-9006-4E1D-8E13-49C818445E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3F38E9-BE49-4D47-9A71-56FE58F9C1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3F38E9-BE49-4D47-9A71-56FE58F9C1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3F38E9-BE49-4D47-9A71-56FE58F9C1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3F38E9-BE49-4D47-9A71-56FE58F9C1EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
