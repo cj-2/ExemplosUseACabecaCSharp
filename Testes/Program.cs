@@ -27,3 +27,10 @@ using Testes;
 
 var conversor = new ConvertIntToString((valor => $"É esse valor: {valor}"));
 Console.WriteLine(conversor(20));
+
+int? numero;
+numero = 2;
+Console.WriteLine(numero);
+
+var bobinha = new ClasseBobinha();
+bobinha.ImprimirAlgo("Olha só, agora a classe faz alguma coisa.");
