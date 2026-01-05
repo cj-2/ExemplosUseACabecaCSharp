@@ -34,3 +34,12 @@ Console.WriteLine(numero);
 
 var bobinha = new ClasseBobinha();
 bobinha.ImprimirAlgo("Olha só, agora a classe faz alguma coisa.");
+
+var objA = new { Nome = "Carlos", Idade = 27 };
+var funA1 = delegate(int valor)
+{
+    Console.WriteLine(valor);
+    return valor.ToString();
+};
+var funA2 = (int valor, string valor2) => $"{valor.ToString()} {valor2}";
+funA2.DynamicInvoke(new object?[] { 1, "Teste" }); // Estou chamando passando os parâmetros por array.
