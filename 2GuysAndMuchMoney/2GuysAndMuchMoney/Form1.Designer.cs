@@ -33,6 +33,8 @@
             this.bankCashLabel = new System.Windows.Forms.Label();
             this.GiveToJoeButton = new System.Windows.Forms.Button();
             this.ReciveFromBobButton = new System.Windows.Forms.Button();
+            this.joeGivesToBobButton = new System.Windows.Forms.Button();
+            this.bobGivesToJoeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // joesCashLabel
@@ -82,18 +84,40 @@
             this.ReciveFromBobButton.UseVisualStyleBackColor = true;
             this.ReciveFromBobButton.Click += new System.EventHandler(this.ReciveFromBobButton_Click);
             // 
+            // joeGivesToBobButton
+            // 
+            this.joeGivesToBobButton.Location = new System.Drawing.Point(15, 124);
+            this.joeGivesToBobButton.Name = "joeGivesToBobButton";
+            this.joeGivesToBobButton.Size = new System.Drawing.Size(100, 40);
+            this.joeGivesToBobButton.TabIndex = 5;
+            this.joeGivesToBobButton.Text = "Joe gives R$ 10 to Bob";
+            this.joeGivesToBobButton.UseVisualStyleBackColor = true;
+            this.joeGivesToBobButton.Click += new System.EventHandler(this.joeGivesToBobButton_Click);
+            // 
+            // bobGivesToJoeButton
+            // 
+            this.bobGivesToJoeButton.Location = new System.Drawing.Point(122, 125);
+            this.bobGivesToJoeButton.Name = "bobGivesToJoeButton";
+            this.bobGivesToJoeButton.Size = new System.Drawing.Size(94, 39);
+            this.bobGivesToJoeButton.TabIndex = 6;
+            this.bobGivesToJoeButton.Text = "Joe gives R$ 5 to Joe";
+            this.bobGivesToJoeButton.UseVisualStyleBackColor = true;
+            this.bobGivesToJoeButton.Click += new System.EventHandler(this.bobGivesToJoeButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 130);
+            this.ClientSize = new System.Drawing.Size(228, 176);
+            this.Controls.Add(this.bobGivesToJoeButton);
+            this.Controls.Add(this.joeGivesToBobButton);
             this.Controls.Add(this.ReciveFromBobButton);
             this.Controls.Add(this.GiveToJoeButton);
             this.Controls.Add(this.bankCashLabel);
             this.Controls.Add(this.bobsCashLabel);
             this.Controls.Add(this.joesCashLabel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Programa Suspeito";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +130,8 @@
         private System.Windows.Forms.Label bankCashLabel;
         private System.Windows.Forms.Button GiveToJoeButton;
         private System.Windows.Forms.Button ReciveFromBobButton;
+        private System.Windows.Forms.Button joeGivesToBobButton;
+        private System.Windows.Forms.Button bobGivesToJoeButton;
     }
 }
 

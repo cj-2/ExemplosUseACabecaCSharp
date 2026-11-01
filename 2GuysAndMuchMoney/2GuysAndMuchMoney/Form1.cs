@@ -27,13 +27,8 @@ namespace _2GuysAndMuchMoney
         {
             InitializeComponent();
 
-            Joe = new Guy();
-            Joe.Name = "Joe";
-            Joe.Cash = 50;
-
-            Bob = new Guy();
-            Bob.Name = "Bob";
-            Bob.Cash = 100;
+            Joe = new Guy() { Name = "Joe", Cash = 50 };
+            Bob = new Guy() { Name = "Bob", Cash = 100 };
 
             UpdateForm();
         }
@@ -54,6 +49,18 @@ namespace _2GuysAndMuchMoney
         private void ReciveFromBobButton_Click(object sender, EventArgs e)
         {
             Bank += Bob.GiveCash(5);
+            UpdateForm();
+        }
+
+        private void joeGivesToBobButton_Click(object sender, EventArgs e)
+        {
+            Bob.ReciveCash(Joe.GiveCash(10));
+            UpdateForm();
+        }
+
+        private void bobGivesToJoeButton_Click(object sender, EventArgs e)
+        {
+            Joe.ReciveCash(Bob.GiveCash(5));
             UpdateForm();
         }
     }
